@@ -25,7 +25,7 @@ cv2.imshow("frame", frame)
 now = datetime.datetime.now() # 年月日時を取得
 filename = now.strftime("%Y%m%d_%H%M%S%f") # 最後のfがマイクロ秒6桁
 print(filename)
-cv2.imwrite(filename + '.png', frame) # ファイルの拡張子はここと下の行変更すればイけるかも 
+cv2.imwrite('./img/%s.png'%filename, frame) # ファイルの拡張子はここと下の行変更すればイけるかも 
 # img = cv2.imread(filename + '.png') ←これいらなくね？
     
     
