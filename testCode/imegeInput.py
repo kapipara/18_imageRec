@@ -12,7 +12,7 @@ import cv2
 import numpy as np
 import datetime 
 
-cap = cv2.VideoCapture(0) # 0はカメラのデバイス番号
+cap = cv2.VideoCapture(1) # 0はカメラのデバイス番号 (接続順で番号を振る　　例，内蔵カメラが０番　外付けwebカメラが１番)
  
 # retは画像を取得成功フラグ
 # VideoCaptureから1フレーム読み込む
