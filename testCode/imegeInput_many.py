@@ -8,6 +8,7 @@
 # Open CV のインポート
 # よくわからんけど，numpyもいれとく
 # とりあえず，ファイル名のためにdatatimeを入れる
+
 import cv2
 import numpy as np
 import datetime 
@@ -21,6 +22,7 @@ i=0
 while True:
     ret, frame = cap.read()
     ret, frame2 =cap2.read()
+    #cap.cv2.rotate(frame, 180) 
 
     # フレームを表示する
     cv2.imshow("frame", frame)
@@ -35,13 +37,21 @@ while True:
     now = datetime.datetime.now() # 年月日時を取得
     filename = now.strftime("%Y%m%d_%H%M%S%f") # 最後のfがマイクロ秒6桁
     print(filename)
-    cv2.imwrite('./img/%s cam1.png'%filename, frame) # ファイルの拡張子はここと下の行変更すればイけるかも 
+    cv2.imwrite('./img/%s cam1.png'%filename, frame) 
     cv2.imwrite("./img/%s cam2.png"%filename, frame2)
-    # img = cv2.imread(filename + '.png') ←これいらなくね？
+    img_src= cv2.imread("./img/%s cam1.png"%filename, 1) #反転したcam1の画像を読み込む
+    center = tuple(np.array([img_src.shape[1] * 0.5, img_src.shape[0] * 0.5])) #画像の中心の位置を測定
+    size = tuple(np.array([img_src.shape[1], img_src.shape[0]]))　#画像の縦横サイズの取得
+    angle=180 #画像の変更する角度（反転）
+    scale=1.0　#倍率
+    rotation_matrix = cv2.getRotationMatrix2D(center, angle, scale) #倍率とか弄る関数
+    img_rot = cv2.warpAffine(img_src, rotation_matrix, size, flags=cv2.INTER_CUBIC)　#画像化
+    cv2.imwrite('./img/%s rotatecam1.png'%filename,img_rot) #画像を出力
     
     
 
     
 # キャプチャを解放する 
 cap.release()
+cap2.release()
 cv2.destroyAllWindows()
