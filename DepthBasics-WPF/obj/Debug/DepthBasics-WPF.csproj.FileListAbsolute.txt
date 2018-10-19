@@ -1,0 +1,16 @@
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\DepthBasics-WPF.csprojAssemblyReference.cache
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\MainWindow.baml
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\MainWindow.g.cs
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\App.g.cs
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\DepthBasics-WPF_MarkupCompile.cache
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\DepthBasics-WPF.g.resources
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\Microsoft.Samples.Kinect.DepthBasics.Properties.Resources.resources
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\DepthBasics-WPF.csproj.GenerateResource.cache
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\DepthBasics-WPF.csproj.CoreCompileInputs.cache
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\bin\Debug\DepthBasics-WPF.exe
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\bin\Debug\DepthBasics-WPF.pdb
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\bin\Debug\Microsoft.Kinect.dll
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\bin\Debug\Microsoft.Kinect.xml
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\DepthBasics-WPF.csproj.CopyComplete
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\DepthBasics-WPF.exe
+C:\Users\Kazuto\Desktop\kinect lib\DepthBasics-WPF\obj\Debug\DepthBasics-WPF.pdb
