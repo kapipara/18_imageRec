@@ -1,0 +1,8 @@
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\bin\Release\SerialPortSample.exe.config
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\bin\Release\SerialPortSample.exe
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\bin\Release\SerialPortSample.pdb
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Release\SerialPortSample.MainForm.resources
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Release\SerialPortSample.Properties.Resources.resources
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Release\SerialPortSample.csproj.GenerateResource.Cache
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Release\SerialPortSample.exe
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Release\SerialPortSample.pdb

@@ -1,0 +1,9 @@
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\bin\Debug\SerialPortSample.exe.config
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\bin\Debug\SerialPortSample.exe
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\bin\Debug\SerialPortSample.pdb
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Debug\SerialPortSample.csprojResolveAssemblyReference.cache
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Debug\SerialPortSample.MainForm.resources
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Debug\SerialPortSample.Properties.Resources.resources
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Debug\SerialPortSample.csproj.GenerateResource.Cache
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Debug\SerialPortSample.exe
+C:\Users\Suzuki_Ittetsu\Desktop\TestProgram\SerialPortSample\SerialPortSample\obj\Debug\SerialPortSample.pdb
