@@ -6,15 +6,15 @@ import threading  # 並行処理用
 # --- シリアル通信用諸元 --- #
 #COM番号は決め打ちやで^^
 # 肩モータ(1番)  MDH7012-64800E
-shoulderMotorCOM = 'COM3'  
+shoulderMotorCOM = 'COM11'  
 # 腕回転モータ(2番) MDH7012-64800E
-armRotateMotorCOM = 'COM5'
+armRotateMotorCOM = 'COM12'
 # 肘モータ(3番) MDH-7012-648KE
-elbowMotorCOM = 'COM'
+elbowMotorCOM = 'COM13'
 # 手握り込み巻取り用モータ(4番) MDS-4018-6750E
-handMotorCOM = 'COM'
+handMotorCOM = 'COM10'
 # 手首折り曲げモータ(5番) MDH-4018-135KE
-wristMotorCOM = 'COM'
+wristMotorCOM = 'COM9'
 # モータドライバ接続シリアルボーレート (標準38400)
 motorBaudrate = 38400
 # 読み取り待機時間
@@ -24,46 +24,47 @@ readTimeout = 0.1
 class moveMotor():
     # コンストラクタ (クラス生成時にシリアル通信確立，確認を行う)
     def __init__(self):
-        try:
-            # シリアル接続
-            self.shoulder  = serial.Serial(shoulderMotorCOM,  motorBaudrate, timeout=readTimeout)
-            self.armRotate = serial.Serial(armRotateMotorCOM, motorBaudrate, timeout=readTimeout)
-            self.elbow     = serial.Serial(elbowMotorCOM,     motorBaudrate, timeout=readTimeout)
-            self.hand      = serial.Serial(handMotorCOM,      motorBaudrate, timeout=readTimeout)
-            self.wrist     = serial.Serial(wristMotorCOM,     motorBaudrate, timeout=readTimeout)
+        #try:
+        # シリアル接続
+        self.shoulder  = serial.Serial(shoulderMotorCOM,  motorBaudrate, timeout=readTimeout)
+        self.armRotate = serial.Serial(armRotateMotorCOM, motorBaudrate, timeout=readTimeout)
+        self.elbow     = serial.Serial(elbowMotorCOM,     motorBaudrate, timeout=readTimeout)
+        self.hand      = serial.Serial(handMotorCOM,      motorBaudrate, timeout=readTimeout)
+        self.wrist     = serial.Serial(wristMotorCOM,     motorBaudrate, timeout=readTimeout)
 
-            # 接続確認(バージョン情報取得)
-            self.shoulder.write('$V\r\n'.encode())     # バイト型に変換，CR+LFで改行コードを送信(CRで十分だけど)
-            s_v = self.shoulder.readline().decode()    # 接続が正常ならバージョン情報が帰ってくるはず
-            self.armRotate.write('$V\r\n'.encode())
-            a_v = self.armRotate.readline().decode()
-            self.elbow.write('$V\r\n'.encode())
-            e_v = elbow.readline().decode()
-            self.hand.write('$V\r\n'.encode())
-            h_v = hand.readline().decode()
-            self.wrist.write('$V\r\n'.encode())
-            w_v = wrist.readline().decode()
+        # 接続確認(バージョン情報取得)
+        self.shoulder.write('$V\r\n'.encode())     # バイト型に変換，CR+LFで改行コードを送信(CRで十分だけど)
+        s_v = self.shoulder.readline().decode()    # 接続が正常ならバージョン情報が帰ってくるはず
+        self.armRotate.write('$V\r\n'.encode())
+        a_v = self.armRotate.readline().decode()
+        self.elbow.write('$V\r\n'.encode())
+        e_v = self.elbow.readline().decode()
+        self.hand.write('$V\r\n'.encode())
+        h_v = self.hand.readline().decode()
+        self.wrist.write('$V\r\n'.encode())
+        w_v = self.wrist.readline().decode()
 
-            # 接続失敗時のログ出力処理
-            if(s_v == None):
-                print(shoulderMotorCOM, "[ERROR!] : 肩モータ接続失敗\n")
-                raise Exception
-            if(a_v == None):
-                print(armRotateMotorCOM, "[ERROR!] : 腕回転モータ接続失敗\n")
-                raise Exception
-            if(e_v == None):
-                print(elbowMotorCOM, "[ERROR!] : 肘モータ接続失敗\n")
-                raise Exception
-            if(h_v == None):
-                print(handMotorCOM, "[ERROR!] : 手握り込み用巻取りモータ接続失敗\n")
-                raise Exception
-            if(w_v == None):
-                print(wristMotorCOM, "[ERROR!] : 手首用モータ接続失敗\n")
-                raise Exception
-
+        # 接続失敗時のログ出力処理
+        if(s_v == None):
+            print(shoulderMotorCOM, "[ERROR!] : 肩モータ接続失敗\n")
+            raise Exception
+        if(a_v == None):
+            print(armRotateMotorCOM, "[ERROR!] : 腕回転モータ接続失敗\n")
+            raise Exception
+        if(e_v == None):
+            print(elbowMotorCOM, "[ERROR!] : 肘モータ接続失敗\n")
+            raise Exception
+        if(h_v == None):
+            print(handMotorCOM, "[ERROR!] : 手握り込み用巻取りモータ接続失敗\n")
+            raise Exception
+        if(w_v == None):
+            print(wristMotorCOM, "[ERROR!] : 手首用モータ接続失敗\n")
+            raise Exception
+        '''
         except:
             print("[ERROR!] : COMポート接続時にエラーが発生しました。\n")
             exit()
+        '''
 
     # 指定モータのサーボをONにする
     def servoON(self, motorNum):
@@ -230,7 +231,6 @@ class moveMotor():
             enc = self.wrist.readline().decode()
             self.wrist.write('$R\r\n'.encode())
             cmd = self.wrist.readline().decode()
-        
         print('エンコーダ位置:'+str(enc))
         print('指令位置'+str(cmd))
         if(motorNum == 5):
@@ -245,11 +245,19 @@ class moveMotor():
         self.wrist.close()
 
 if __name__ == '__main__':
-    m=moveMotor()
+    m = moveMotor()
+    
     m.servoON(1)
     m.servoON(2)
-    #while(1):
-        #mot=m.getpos(1)
-    m.rotateMotor(1,'CW',30,10) 
-    m.rotateMotor(2,'CW',100,9)
-    time.sleep(5)
+    m.servoON(3)
+    m.servoON(4)
+    m.servoON(5)
+
+    m.rotateMotor(1, 'CW', 100, 5)
+    m.rotateMotor(2, 'CW',   5, 5)
+    m.rotateMotor(3, 'CW',  80, 5)
+    m.rotateMotor(4, 'CW',   5, 5)
+    m.rotateMotor(5, 'CW',   2, 5)
+    m.emergency()
+
+    print("move Ended.\n")
